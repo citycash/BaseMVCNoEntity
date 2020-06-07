@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BaseMVCNoEntity.BLL.BussinessLogic;
+using BaseMVCNoEntity.Model;
 
 namespace BaseMVCNoEntity.Controllers
 {
@@ -13,11 +15,30 @@ namespace BaseMVCNoEntity.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public PartialViewResult ListUser()
         {
-            ViewBag.Message = "Your application description page.";
+            HomeBLL Home = new HomeBLL();
+            HomeModel Model = new HomeModel()
+            {
+                ListUser = Home.GetDataUser(),
+            };
+            return PartialView("_ListUser", Model);
+        }
 
-            return View();
+        [HttpPost]
+        public string InsertUser(UserModel Model)
+        {
+            HomeBLL Home = new HomeBLL();
+            string Result = Home.InsertOrUpdateUser(Model);
+            return Result;
+        }
+
+        [HttpPost]
+        public string DeleteUser(UserModel Model)
+        {
+            HomeBLL Home = new HomeBLL();
+            string Result = Home.DeleteUser(Model);
+            return Result;
         }
 
         public ActionResult Contact()
