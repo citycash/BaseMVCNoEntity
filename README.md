@@ -9,6 +9,7 @@ Cara pemakaian :
 2. Jalankan Script DB di folder DB, untuk membuat database dan Tablenya (Recommend : menggunakan SQL Server 2017)
 3. Install Visual Studio (Recommend : VS 2019)
 4. Buka Folder BaseMVCNoEntity Lalu jalankan BaseMVCNoEntity.sln
+5. Rubah Connection String di WebConfig
 5. Jalankan Project
 
 Requirement Project
