@@ -2,7 +2,7 @@
 $(document).ready(function () {
     $('#formSCRUD').validate({
         rules: {
-            Name: {
+            Nama: {
                 required: true,
             },
             Email: {
